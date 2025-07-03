@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# VS Code or PyCharm
+.vscode/
+.idea/
+
+# MacOS
+.DS_Store
+
+# Flask cache
+instance/
+*.sqlite3
+
+# Model files
+models/
