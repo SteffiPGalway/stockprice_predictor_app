@@ -9,6 +9,8 @@ def plot_predictions(actual, predicted, save_path):
     plt.figure(figsize=(10, 6))
     plt.plot(actual, label='Actual Price')
     plt.plot(predicted, label='Predicted Price')
+    plt.xlabel("Date")
+    plt.ylabel("Stock Price (USD)")
     plt.title('Stock Price Prediction')
     plt.xlabel('Time')
     plt.ylabel('Price')

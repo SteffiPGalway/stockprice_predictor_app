@@ -71,7 +71,7 @@ def index():
         
          # Step 7: Predict next day price 
         last_sequence = scaled_data[-60:]
-        predicted_price = predict_next_day(model, last_sequence, scaler)
+        predicted_price = round(predict_next_day(model, last_sequence, scaler), 2)
         current_app.logger.debug(f"Predicted next day price for {symbol}: {predicted_price}")
 
         # Predict on test set
