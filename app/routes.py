@@ -45,7 +45,7 @@ def index():
         scaled_data, scaler = normalize_data(data)
         current_app.logger.debug("Data normalized")
 
-        # Create sequences
+        # Step 2: Create sequences
         X, y = create_sequences(scaled_data)
         current_app.logger.debug(f"Created sequences: X shape {X.shape}, y shape {y.shape}")
 
@@ -74,7 +74,7 @@ def index():
         predicted_price = round(predict_next_day(model, last_sequence, scaler), 2)
         current_app.logger.debug(f"Predicted next day price for {symbol}: {predicted_price}")
 
-        # Predict on test set
+        # Step 8: Predict on test set
         predicted = model.predict(X_test)
         current_app.logger.debug("Predicted prices for test set")
         predicted_prices = scaler.inverse_transform(predicted)
@@ -82,7 +82,7 @@ def index():
         actual_prices = scaler.inverse_transform(y_test.reshape(-1, 1))
         current_app.logger.debug("Inverse transformed actual prices")
 
-        # Visualize results
+        # Step 9: Visualize results
         plot_predictions(actual_prices, predicted_prices, save_path='app/static/plot.png')
         current_app.logger.info("Plot saved to app/static/plot.png")
 
