@@ -1,2 +1,2 @@
 #!/bin/bash
-gunicorn run:app --bind 0.0.0.0:8000 --reload --log-level debug
+gunicorn run:app --bind 0.0.0.0:$PORT --reload --log-level debug
