@@ -5,6 +5,7 @@ import logging
 def create_app():
     app = Flask(__name__)
     
+    # app.register_blueprint(bp, url_prefix='/app')
     app.register_blueprint(bp, url_prefix='/app')
 
     # Setup logging
